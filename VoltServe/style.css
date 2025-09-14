@@ -1,0 +1,208 @@
+    *{
+      margin: 0%;
+      padding: 0%;
+    }
+    header{
+      display:flex;
+      background-color: orange;
+      height: 60px;
+      align-items: center;
+      padding-left: 20px;
+      border-radius: 2px;
+      color: #333333;
+      
+    }
+    .li {
+      list-style: none;
+      margin-left: 590px;
+    }
+    .a{
+      padding: 25px;
+      color: #333333;
+      font-size:larger;
+      text-decoration: none;
+    }
+    .Cl1{
+      background-image: url("https://media.istockphoto.com/id/503622794/photo/light-bulbs-on-a-warm-gradient-background.jpg?s=612x612&w=0&k=20&c=cmKXP5GwrBtepYdwHkM7SOZPirLWQDBj1slNi2LE2jY=");
+      height: 669px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      
+
+    }
+    .heading{
+      color: #ffffff;
+      text-align: center;
+      padding-top: 300px;
+    }
+    .Services{
+      text-align: center;
+      padding-top: 80px;
+    }
+    .Cl2{
+      display:flex;
+      justify-content: space-evenly;
+    }
+    .One{
+      background-color: orange;
+      gap: 20px 30px;
+      border-radius: 10px;
+      width: 300px;
+      height: 280px;
+      padding: 15px;
+    }
+    .p{
+      color: white;
+      font-size: x-large;
+    }
+    #button1{
+      background-color: orange;
+      padding: 10px;
+      border-radius: 8px;
+      margin-inline-start: 50%;
+      border: 1px solid orange;
+      margin-top: 70px;
+      color: #fffdfd;
+
+    }
+    #button2{
+      background-color: orange;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid orange;
+      margin-top: 70px;
+      color: #fffdfd;
+      
+    }
+    .company{
+      font-size:50px;
+      text-align: center;
+      margin-top: 150px;
+    }
+    .about{
+      display:flex;
+      margin-top: 70px;
+      margin-left: 150px;
+    }
+    .cl3{
+      text-align: center;
+      font-size: 26px;
+      margin-top: 30px;
+    }
+    #p1{
+      margin-top: 40px;
+      font-size: 20px;
+      text-align: justify;
+      margin: 50px;
+    }
+    #button3{
+      background-color: orange;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid orange;
+      margin-top: 20px;
+      color: #fffdfd;
+      padding-left: 25px;
+      padding-right: 25px;
+
+    }
+    .customers{
+      text-align: center;
+      font-size: 30px;
+      margin-top: 70px;
+      height: 100px;
+    }
+    .client{
+      display: flex;
+      margin-left: 300px;
+      margin-right: 300px;
+      padding: 50px;
+    }
+    .help{
+      height: 200px;
+      background-color: #201e1e;
+      text-align: center;
+      color:white;
+      padding-top: 100px;
+    }
+    #id12{
+      margin-left: 40%;
+      margin-top: 30px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid orange;
+    }
+    #id13{
+      margin-left: 30px;
+      margin-top: 30px;
+      border-radius: 8px;
+      padding: 10px;
+    }
+    #id14{
+      margin-top: 30px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid orange;
+      background-color: orange;
+      padding-left: 20px;
+      padding-right: 20px;
+      color:white;
+    }
+    #b4{
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid orange;
+      background-color: orange;
+      padding-left: 20px;
+      padding-right: 20px;
+      color:white;
+    }
+    .map{
+      align-items:flex-end;
+    }
+    .contact{
+      display: flex;
+      margin-left: 20%;
+      margin-top: 50px;
+    }
+    .contact1{
+      width:500px;
+      height: 500px;
+      font-size: xx-large;
+    }
+    .footer{
+      display: flex;
+      background-color: #201e1e;
+      height: 300px;
+      text-align: center;
+      color: white;
+    }
+    .Ul{
+      list-style: none;
+      font-size:larger;
+      text-align: left;
+    }
+    #i1{
+       text-decoration: none;
+       color: #ffffff;
+
+    }
+    .blog{
+      width: 200px;
+      text-align: justify;
+      margin-left: 250px;
+      padding-top: 50px;
+    }
+    #id3{
+      color: white;
+      background-color: #201e1e;
+
+    }
+    .news{
+      margin-left: 250px;
+      padding-top: 50px;
+    }
+    .links{
+      margin-left: 250px;
+      padding-top: 50px;
+    }
