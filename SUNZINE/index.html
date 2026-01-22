@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .site-logo img {
+      height: 25px;
+      margin-right: 8px;
+    }
+    .menu-link {
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin: 0 8px;
+      position: relative;
+      color: #999;
+    }
+    .menu-link.active {
+      color: #000;
+    }
+    .menu-link.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background-color: #00c9a7;
+    }
+    .welcome-text {
+      text-align: center;
+      margin: 80px 0 40px 0;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .category-menu {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .category-item {
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 10px;
+      font-size: 14px;
+      color: #aaa;
+      font-weight: 600;
+      position: relative;
+    }
+    .category-item.active {
+      color: #000;
+    }
+    .category-item.active::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #00c9a7;
+    }
+    .gallery img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    footer {
+      background-color: #111;
+      color: #aaa;
+      padding: 20px 0;
+    }
+    footer .footer-logo img {
+      height: 30px;
+    }
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+    footer .social-icons a {
+      color: #aaa;
+      margin-left: 15px;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+  </style>
+</head>
+<body>
+  <section>
+    <Header>
+      <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center site-logo" href="#">
+            <img src="Images/logo.png" alt="Logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="mainMenu">
+            <ul class="navbar-nav align-items-lg-center">
+              <li class="nav-item"><a class="menu-link active" href="#">Home</a></li>
+              <li class="nav-item"><a class="menu-link" href="#">Albums</a></li>
+              <li class="nav-item"><a class="menu-link" href="#">About</a></li>
+              <li class="nav-item"><a class="menu-link" href="#">Blog</a></li>
+              <li class="nav-item"><a class="menu-link" href="#">Contact</a></li>
+              <li class="nav-item"><a class="menu-link" href="#"><i class="fas fa-search"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="welcome-text">
+        HELLO! WELCOME TO SUNZINE PHOTO GALLERY<br>
+        WITH CREATIVE & UNIQUE STYLE
+      </div>
+
+      <div class="category-menu">
+        <a href="#" class="category-item active">All</a> • 
+        <a href="#" class="category-item">Photography</a> • 
+        <a href="#" class="category-item">Travel</a> • 
+        <a href="#" class="category-item">Nature</a> • 
+        <a href="#" class="category-item">Fashion</a> • 
+        <a href="#" class="category-item">Life Style</a>
+      </div>
+    </Header>
+  </section>
+  <section class="container gallery mb-5">
+    <div class="row g-3">
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/1.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/2.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/3.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/4.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/5.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/6.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/7.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/8.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/9.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/10.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/11.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/12.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/13.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/14.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/15.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/16.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/17.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/18.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/19.jpg" alt=""></div>
+      <div class="col-lg-3 col-md-6 col-sm-12"><img src="Images/20.jpg" alt=""></div>
+    </div>
+  </section>
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="footer-logo mb-3 mb-md-0">
+        <img src="Images/footer-logo.png" alt="Footer Logo"> 
+      </div>
+      <p class="text-center mb-3 mb-md-0">
+        Copyright © 2025 All rights reserved!!!
+      </p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
