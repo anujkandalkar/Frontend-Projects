@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teachers, Services, Testimonials & Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> 
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+ <style>
+  body {
+  background-color: #fff8f8;
+  font-family: 'Poppins', sans-serif;
+}
+
+.color-bar {
+  height: 6px;
+  background: linear-gradient(to right, #00796b 20%, #ff9800 40%, #3f51b5 60%, #f44336 80%);
+}
+
+.main-nav {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 20px 60px;
+  transition: background 0.3s ease;
+}
+
+.main-nav.scrolled {
+  background: rgba(0,0,0,0.7);
+}
+
+.main-nav-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff !important;
+}
+
+.main-nav-links .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  margin: 0 10px;
+  position: relative;
+}
+
+.main-nav-links .nav-link:hover,
+.main-nav-links .nav-link.active {
+  color: #ff9800 !important;
+}
+
+.banner-section {
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("Images/hero_1.jpg") center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.banner-section h1 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.banner-section p {
+  font-size: 1.2rem;
+  color: #f2f2f2;
+  margin-bottom: 25px;
+}
+
+.banner-section .video-btn {
+  width: 70px;
+  height: 70px;
+  border: 2px solid #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  transition: 0.3s;
+  color: #fff;
+  background: transparent;
+}
+
+.banner-section .video-btn:hover {
+  background-color: #fff;
+  color: #000;
+  transform: scale(1.1);
+}
+
+.banner-section span {
+  margin-left: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .main-nav { padding: 15px 30px; }
+  .banner-section { height: 80vh; padding: 0 15px; }
+  .banner-section h1 { font-size: 1.8rem; }
+  .banner-section p { font-size: 1rem; }
+}
+
+.learn-section { background-color: #fff6f5; }
+
+.learn-content { padding: 20px; }
+
+.learn-content img {
+  border-top-left-radius: 150px;
+  border-bottom-left-radius: 150px;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.learn-list li {
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.learn-btn {
+  background-color: #e30000;
+  border: none;
+}
+
+.learn-btn:hover {
+  background-color: #b50000;
+}
+
+.instructors {
+  padding: 80px 0 60px;
+  text-align: center;
+}
+
+.instructors h2 {
+  color: #dc3545;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+}
+
+.instructor-card {
+  border: none;
+  border-radius: 50px;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+.instructor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.instructor-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.instructor-card p {
+  color: #555;
+  font-size: 15px;
+}
+
+.inst1 { background-color: #fff9d6; }
+.inst2 { background-color: #e5ecff; }
+.inst3 { background-color: #dbf9f2; }
+.inst4 { background-color: #ffe5e5; }
+
+.services-section {
+  padding: 60px 0 80px;
+  text-align: center;
+}
+
+.services-section h2 {
+  color: #dc3545;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.service-card {
+  text-align: left;
+  margin-bottom: 50px;
+  transition: all 0.3s ease;
+}
+
+.service-card img { width: 60px; margin-bottom: 15px; }
+.service-card h5 { font-weight: 700; margin-bottom: 10px; }
+.service-card p {
+  color: #444;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+.service-card a {
+  color: red;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.service-card a:hover { text-decoration: underline; }
+
+@media (max-width: 768px) {
+  .service-card { text-align: center; }
+  .service-card img { margin: 0 auto 15px; }
+}
+
+.reviews { padding: 80px 0 60px; text-align: center; }
+.reviews h2 {
+  color: #dc3545;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+}
+
+.review-card {
+  background-color: #dff9fb;
+  border-radius: 40px;
+  padding: 50px;
+  max-width: 700px;
+  margin: auto;
+  position: relative;
+}
+
+.review-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.review-name { margin-top: 50px; font-weight: 600; }
+.review-role { color: #666; font-size: 14px; margin-bottom: 10px; }
+.review-text { font-style: italic; color: #333; line-height: 1.7; }
+
+.blog-area {
+  padding: 80px 0 40px;
+  background-color: #fff8f8;
+}
+
+.blog-area h2 {
+  color: #dc3545;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.blog-card {
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+.bg-image-section {
+  background-image: url('Images/circle.png');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+  margin-left: 0;
+}
+
+
+.blog-card:hover { transform: translateY(-5px); }
+.blog-card img { width: 100%; height: 280px; object-fit: cover; }
+
+.blog-meta { font-size: 14px; color: #888; }
+.blog-meta .admin { color: #dc3545; font-weight: 600; }
+.blog-title { font-weight: 700; font-size: 1.25rem; margin: 10px 0; }
+.blog-desc { color: #555; font-size: 15px; line-height: 1.6; }
+.read-link {
+  color: #dc3545;
+  font-weight: 600;
+  text-decoration: none;
+}
+.read-link:hover { text-decoration: underline; }
+
+.site-footer { background-color: #fff8f8; padding: 60px 0 30px; }
+.site-footer h5 { font-weight: 700; margin-bottom: 20px; }
+.site-footer a { text-decoration: none; color: #000; display: block; margin-bottom: 8px; transition: color 0.3s; }
+.site-footer a:hover { color: #dc3545; }
+
+.footer-social a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #f1f1f1;
+  border-radius: 50%;
+  color: #000;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+.footer-social a:hover { background-color: #dc3545; color: #fff; }
+
+.footer-bottom {
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+  padding-top: 15px;
+  text-align: center;
+  color: #555;
+}
+
+.site-footer i { font-size: 1.2rem; transition: color 0.3s; }
+.site-footer i:hover { color: #ff9800; }
+
+
+ </style>
+</head>
+<body>
+
+<div class="color-bar"></div>
+
+<nav class="main-nav navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="main-nav-brand" href="#">Nova</a>
+    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+      <ul class="navbar-nav main-nav-links">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Dropdown</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Option 1</a></li>
+            <li><a class="dropdown-item" href="#">Option 2</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#">Classes</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="banner-section">
+  <div class="container">
+    <h1>IT'S NEVER TOO LATE TO DEFEND YOURSELF</h1>
+    <p>Far far away, behind the word mountains</p>
+    <a href="#" class="video-btn"><i class="bi bi-play-fill"></i></a>
+    <span>Watch video</span>
+  </div>
+</section>
+
+<section class="learn-section py-5">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row align-items-center">
+
+  
+      <div class="flex-fill p-4 bg-image-section text-md-start text-center">
+        <div class="icon mb-3">
+          <i class="bi bi-emoji-smile" style="font-size: 2rem; color: red;"></i>
+        </div>
+        <h2 class="fw-bold text-danger text-uppercase mb-3">Encourage Your <br> Kids To Learn</h2>
+        <p class="text-secondary mb-4">
+          Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+        </p>
+        <ul class="list-unstyled learn-list mb-4">
+          <li><i class="bi bi-dot text-danger"></i> Taekwondo</li>
+          <li><i class="bi bi-dot text-danger"></i> Brazilian Jiu-Jitsu</li>
+          <li><i class="bi bi-dot text-danger"></i> Muay Thai</li>
+          <li><i class="bi bi-dot text-danger"></i> Basic Defense</li>
+        </ul>
+        <a href="#" class="btn learn-btn rounded-pill px-4 py-2">Enroll Now</a>
+      </div>
+
+      <div class="flex-fill text-center mt-4 mt-md-0">
+        <img src="Images/hero_1.jpg" alt="Kids Martial Arts" class="img-fluid rounded-end">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="instructors">
+  <div class="container">
+    <h2>OUR TEACHERS</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-3">
+        <div class="instructor-card inst1">
+          <img src="Images/person_1.jpg" class="instructor-img" alt="">
+          <h5>Maria Jones</h5>
+          <p>Instructor</p>
+          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="instructor-card inst2">
+          <img src="Images/person_2.jpg" class="instructor-img" alt="">
+          <h5>James Campbell</h5>
+          <p>Instructor</p>
+          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="instructor-card inst3">
+          <img src="Images/person_3.jpg" class="instructor-img" alt="">
+          <h5>Rob Smith</h5>
+          <p>Instructor</p>
+          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="instructor-card inst4">
+          <img src="Images/person_4.jpg" class="instructor-img" alt="">
+          <h5>Kaye Hamilton</h5>
+          <p>Instructor</p>
+          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-section container">
+  <h2>OUR SERVICES</h2>
+  <div class="row">
+    <div class="col-md-4 col-sm-6">
+      <div class="service-card" >
+        <img src="Images/1.png" alt="Won Medal"><br>
+        <h5>Won Medal</h5>
+        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+        <a href="#">Learn More</a>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="service-card">
+        <img src="Images/2.png" alt="Wear Kimono">
+        <h5>Wear Kimono</h5>
+        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+        <a href="#">Learn More</a>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="service-card">
+        <img src="Images/3.png" alt="Martial Arts">
+        <h5>Martial Arts</h5>
+        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+        <a href="#">Learn More</a>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="service-card">
+        <img src="Images/4.png" alt="Wear Kimono 2">
+        <h5>Wear Kimono 2</h5>
+        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+        <a href="#">Learn More</a>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="service-card">
+        <img src="Images/5.png" alt="Martial Arts Kids">
+        <h5>Martial Arts Kids</h5>
+        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+        <a href="#">Learn More</a>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <div class="service-card">
+        <img src="Images/6.png" alt="Martial Arts">
+        <h5>Martial Arts</h5>
+        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+        <a href="#">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="container">
+    <h2>TESTIMONIALS</h2>
+    <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="review-card">
+            <img src="Images/person_1.jpg" class="review-img" alt="Maria Jones">
+            <h5 class="review-name">Maria Jones</h5>
+            <p class="review-role">Instructor</p>
+            <p class="review-text">“Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.”</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="review-card">
+            <img src="Images/person_2.jpg" class="review-img" alt="John Smith">
+            <h5 class="review-name">John Smith</h5>
+            <p class="review-role">Designer</p>
+            <p class="review-text">“A wonderful serenity has taken possession of my entire soul.”</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="review-card">
+            <img src="Images/person_3.jpg" class="review-img" alt="Emma Brown">
+            <h5 class="review-name">Emma Brown</h5>
+            <p class="review-role">Developer</p>
+            <p class="review-text">“Separated they live in Bookmarksgrove right at the coast of the Semantics.”</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="blog-area">
+  <div class="container">
+    <h2>BLOG POSTS</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card blog-card h-100">
+          <img src="Images/post_2.jpg" alt="blog1">
+          <div class="card-body">
+            <p class="blog-meta mb-2">July 17, 2019 &nbsp; by <span class="admin">Admin</span></p>
+            <h5 class="blog-title">How Awesome Stay connected</h5>
+            <p class="blog-desc">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+            <a href="#" class="read-link">Read more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card blog-card h-100">
+          <img src="Images/post_3.jpg" alt="blog2">
+          <div class="card-body">
+            <p class="blog-meta mb-2">July 17, 2019 &nbsp; by <span class="admin">Admin</span></p>
+            <h5 class="blog-title">We Need Unlimited People</h5>
+            <p class="blog-desc">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+            <a href="#" class="read-link">Read more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card blog-card h-100">
+          <img src="Images/post_4.jpg" alt="blog3">
+          <div class="card-body">
+            <p class="blog-meta mb-2">July 17, 2019 &nbsp; by <span class="admin">Admin</span></p>
+            <h5 class="blog-title">Importance of Notifications</h5>
+            <p class="blog-desc">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+            <a href="#" class="read-link">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-md-4">
+        <h5>About Foundation.</h5>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+        <h6 class="mt-4">Connect</h6>
+        <div class="footer-social mt-2">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+        <a href="#"><i class="fab fa-dribbble"></i></a>
+    </div>
+      </div>
+      <div class="col-md-2 col-6">
+        <h5>Links</h5>
+        <a href="#">About us</a>
+        <a href="#">Services</a>
+        <a href="#">News</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="col-md-2 col-6">
+        <h5>Company</h5>
+        <a href="#">About us</a>
+        <a href="#">Services</a>
+        <a href="#">News</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="col-md-4">
+        <h5>Contact</h5>
+        <p><i class="bi bi-geo-alt-fill text-danger me-2"></i>43 Raymouth Rd. Baltemoer, London 3910</p>
+        <p><i class="bi bi-telephone-fill text-danger me-2"></i>+1(123)-456-7890<br><i class="bi bi-telephone-fill text-danger me-2"></i>+1(123)-456-7890</p>
+        <p><i class="bi bi-envelope-fill text-danger me-2"></i>info@mydomain.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom mt-4">
+      <p>Copyright ©2025 All rights reserved | This template is made with <span class="text-danger">❤</span> by <span class="text-danger">Colorlib</span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
