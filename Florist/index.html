@@ -4,1058 +4,263 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flower Website</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-VuK7M+WqZzK9RBD7Up9Qn/5EyK+jzm6jHTQ35w30SxF5N/RiT7AxkPKAcA1G1/hbQ3u4Mz0WDx1PBPgb0EMtRQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-    /* Navbar Styling */
-    .navbar {
-      background-color: #fff;
-      padding: 10px 60px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-
-    .navbar-brand {
-      font-family: "Georgia", serif;
-      font-style: italic;
-      font-size: 28px;
-      font-weight: 500;
-      color: #000;
-    }
-
-    .navbar-brand span {
-      color: #ff5f8f; /* pink flower color */
-      font-size: 20px;
-    }
-
-    .navbar-nav .nav-link {
-      font-size: 15px;
-      font-weight: 500;
-      color: #000 !important;
-      margin: 0 10px;
-      text-transform: uppercase;
-    }
-
-    .navbar-nav .nav-link.active {
-      color: #ff5f8f !important;
-    }
-
-    .icon-group img {
-      width: 22px;
-      margin-left: 18px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .icon-group img:hover {
-      transform: scale(1.1);
-    }
-
-    .price {
-      color: #ff5f8f;
-      font-weight: 500;
-      margin-left: 5px;
-    }
-    .navbar-nav .nav-link:hover{
-        color: #ff80a8;
-    }
-
-    /*background iamge*/
-    .carousel-item {
-      height: 80vh;
-      background-size: cover;
-      background-position: center;
-     
-    }
-
-
-    .hero-content {
-      position: relative;
-      top: 50%;
-      left: 10%;
-      transform: translateY(-50%);
-      color: #000;
-      max-width: 500px;
-    }
-
-    .hero-content h5 {
-      font-size: 14px;
-      letter-spacing: 1.5px;
-      color: #555;
-    }
-
-    .hero-content h1 {
-      font-family: 'Georgia', serif;
-      font-size: 48px;
-      font-weight: 600;
-      color: #222;
-      margin: 20px 0;
-    }
-
-    .btn-shop {
-      background-color: #ff5f8f;
-      color: #fff;
-      border: none;
-      border-radius: 25px;
-      padding: 10px 30px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      transition: 0.3s;
-    }
-
-    .btn-shop:hover {
-      background-color: #ff80a8;
-    }
-
-    /*Next section*/
-    .feature-section {
-      padding: 50px 0;
-    }
-
-    .feature-item {
-      text-align: center;
-    }
-
-    .feature-item i {
-      font-size: 40px;
-      color: #ff5f8f;
-      margin-bottom: 15px;
-    }
-
-    .feature-item h5 {
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .feature-item p {
-      color: #555;
-      font-size: 15px;
-    }
-
-    /* Category cards */
-
-    .category-card {
-      border: none;
-      overflow: hidden;
-      transition: 0.3s ease-in-out;
-    }
-
-    .category-card:hover {
-      transform: scale(1.03);
-    }
-
-    .category-card img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-    }
-
-    .category-info {
-      background-color: #fff;
-      text-align: center;
-      margin-bottom: 30px;
-      margin: -60px 30px 30px 30px;
-      position: relative;
-      z-index: 2;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .category-info h5 {
-      font-family: 'Georgia', serif;
-      font-size: 22px;
-      margin-bottom: 5px;
-    }
-
-    .category-info p {
-      color: #777;
-      margin: 0;
-      font-size: 14px;
-    }
-    /* About */
-    .about-title {
-      font-size: 2.2rem;
-      font-weight: 600;
-    }
-    .about-text {
-      color: #666;
-    }
-
-  /* Flower Video Section */
-    .flower-image {
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
-    }
-    .flower-image img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .play-btn {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #fff;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.2);
-    }
-    .play-btn::after {
-      content: '';
-      border-left: 15px solid #e25b8d;
-      border-top: 8px solid transparent;
-      border-bottom: 8px solid transparent;
-    }    
-
-    /*out Flower Section*/
-    .section-title {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .section-title p {
-      color: #e83e8c;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.9rem;
-      font-weight: bold;
-      margin-bottom: 0.25rem;
-    }
-    .section-title h2 {
-      font-size: 2.2rem;
-      font-weight: 500;
-    }
-    .filter-btns {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .filter-btns .btn {
-      border: none;
-      background: none;
-      font-size: 0.9rem;
-      margin: 0 0.5rem;
-      color: #000;
-    }
-    .filter-btns .btn.active {
-      border: 1px solid #e83e8c;
-      color: #e83e8c;
-      border-radius: 20px;
-      padding: 0.25rem 1rem;
-    }
-    .product-card {
-      text-align: center;
-      position: relative;
-      margin-bottom: 2rem;
-      
-    }
-    .product-card img {
-      width: 100%;
-      border-radius: 4px;
-    }
-    .badge-label {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background-color: #000;
-      color: #fff;
-      font-size: 0.7rem;
-      padding: 2px 8px;
-      border-radius: 3px;
-      text-transform: uppercase;
-    }
-    .product-title {
-      margin-top: 1rem;
-      font-size: 1rem;
-      font-weight: 500;
-    }
-    .product-price {
-      font-weight: bold;
-      font-size: 0.9rem;
-    }
-    .view-all {
-      text-align: center;
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      margin-top: 1rem;
-      letter-spacing: 1px;
-    }
-    .view-all a {
-      text-decoration: none;
-      border-bottom: 1px solid #000;
-      color: #000;
-    }
-
-    @media (min-width: 992px) {
-    .col-lg-2-4 {
-    flex: 0 0 20%;
-    max-width: 20%;
-     }
-    }
-
-
-    /*custom flower section*/
-    .hero {
-      background-image:url("Images/call-bg.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 400px;
-      position: relative;
-      color: white;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero h6 {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-top: 1000px;
-    }
-
-    .hero h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 2.5rem;
-      font-weight: 400;
-      line-height: 1.4;
-      margin-bottom: 1.5rem;
-    }
-
-    .btn-pink {
-      background-color: #e83e8c;
-      color: white;
-      border-radius: 30px;
-      padding: 0.5rem 1.5rem;
-    }
-
-    .btn-pink:hover {
-      background-color: #d63384;
-    }
-
-    .btn-white {
-      background-color: white;
-      color: #e83e8c;
-      border-radius: 30px;
-      padding: 0.5rem 1.5rem;
-    }
-
-    .btn-white:hover {
-      background-color: #f8f9fa;
-    }
-
-    /*Card Section*/
-    .category-tag {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background-color: black;
-      color: white;
-      font-size: 0.75rem;
-      font-weight: bold;
-      padding: 3px 8px;
-      text-transform: uppercase;
-    }
-    .card-img-top-container {
-      position: relative;
-    }
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: 600;
-    }
-    .section-subtitle {
-      color: #e91e63;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-    .btn-outline-pink {
-      border: 2px solid #e91e63;
-      color: #e91e63;
-      font-weight: 600;
-      border-radius: 50px;
-    }
-    .btn-outline-pink:hover {
-      background-color: #e91e63;
-      color: white;
-    }
-/*last back ground section*/
-    .testimonial-section {
-      background-color: #f9f7fb;
-      padding-top: 40px;
-      height: 400px;
-      text-align: center;
-    }
-
-    .testimonial-section .quote-icon {
-      font-size: 40px;
-      color: #f25789;
-      margin-bottom: 20px;
-    }
-
-    .testimonial-text {
-      font-style: italic;
-      font-size: 1.1rem;
-      color: #444;
-      max-width: 900px;
-     text-align: center;
-     padding-left: 350px;
-      line-height: 1.8;
-    }
-
-    .testimonial-author {
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-
-    .testimonial-role {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      color: #888;
-      letter-spacing: 1px;
-    }
-
-    .carousel-control-prev,
-    .carousel-control-next {
-      width: 40px;
-      height: 40px;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: white;
-      border-radius: 50%;
-      color: #000;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-   
-
-    /* Optional: Flower decorations */
-    .flower-left {
-      position: absolute;
-      top: 0;
-      left: 0;
-      max-width: 150px;
-    }
-
-    /* Image Grid Below */
-    .image-grid img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-
-    /*Footer Section*/
-    .footer-top {
-      padding: 40px 0 20px;
-      border-bottom: 1px solid #ddd;
-      background-color: #fff;
-    }
-
-    .footer-top .logo {
-      font-size: 28px;
-      font-weight: bold;
-      font-style: italic;
-    }
-
-    .footer-top .logo .flower {
-      color: #e91e63;
-      margin-left: 5px;
-    }
-
-    .footer-top p {
-      margin: 0;
-      font-size: 15px;
-      color: #444;
-    }
-
-    .footer-top .social-icons a {
-      color: #000;
-      font-size: 18px;
-      margin-left: 15px;
-      transition: color 0.2s;
-    }
-
-    .footer-top .social-icons a:hover {
-      color: #e91e63;
-    }
-
-    .footer {
-      background-color: #f9f9f9;
-      padding: 60px 0 30px;
-    }
-
-    .footer h5 {
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    .footer a {
-      color: #000;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
-
-    .footer input[type="email"] {
-      border: none;
-      border-bottom: 1px solid #000;
-      border-radius: 0;
-      padding: 5px;
-      width: 100%;
-      background: transparent;
-    }
-
-    .footer .subscribe-btn {
-      background: none;
-      border: none;
-      color: #000;
-      font-weight: bold;
-      padding-left: 10px;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid #ddd;
-      padding-top: 20px;
-      margin-top: 40px;
-      font-size: 14px;
-      color: #555;
-    }
-    html, body {
-    overflow-x: hidden;  
-    width: 100%;
-    }
-
-    .row {
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    .container, .container-fluid, section, div {
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-
-    img, video {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    }
-  </style>
+        html, body { overflow-x: hidden; width: 100%; font-family: 'Poppins', sans-serif; }
+        .row { margin-left: 0; margin-right: 0; }
+        img, video { max-width: 100%; height: auto; display: block; }
+        .navbar { background-color: #fff; padding: 10px 60px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .navbar-brand { font-family: "Georgia", serif; font-style: italic; font-size: 28px; font-weight: 500; color: #000; }
+        .navbar-nav .nav-link { font-size: 14px; font-weight: 600; color: #000 !important; margin: 0 10px; text-transform: uppercase; }
+        .navbar-nav .nav-link.active, .navbar-nav .nav-link:hover { color: #ff5f8f !important; }
+        .icon-group img { width: 22px; margin-left: 18px; cursor: pointer; transition: 0.3s; }
+        .icon-group img:hover { transform: scale(1.1); }
+        .price { color: #ff5f8f; font-weight: 600; margin-left: 8px; }
+        .carousel-item { height: 80vh; background-size: cover; background-position: center; }
+        .hero-content { position: relative; top: 50%; left: 10%; transform: translateY(-50%); max-width: 500px; }
+        .hero-content h5 { font-size: 14px; letter-spacing: 2px; color: #ff5f8f; font-weight: 700; }
+        .hero-content h1 { font-family: 'Georgia', serif; font-size: 48px; font-weight: 600; margin: 20px 0; }
+        .btn-shop { background-color: #ff5f8f; color: #fff; border: none; border-radius: 25px; padding: 12px 35px; font-weight: 600; transition: 0.3s; }
+        .btn-shop:hover { background-color: #ff80a8; }
+        .feature-section { padding: 80px 0; }
+        .category-card { border: none; overflow: hidden; transition: 0.3s; }
+        .category-card:hover { transform: scale(1.03); }
+        .category-card img { width: 100%; height: 400px; object-fit: cover; border-radius: 5px; }
+        .category-info { background-color: #fff; text-align: center; margin: -60px 30px 30px 30px; position: relative; z-index: 2; box-shadow: 0 5px 15px rgba(0,0,0,0.08); padding: 20px; }
+        .section-title { text-align: center; margin-bottom: 2rem; }
+        .section-title p { color: #e83e8c; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; }
+        .filter-btns .btn { border: none; font-size: 14px; margin: 0 5px; color: #000; }
+        .filter-btns .btn.active { border: 1px solid #e83e8c; color: #e83e8c; border-radius: 20px; padding: 5px 20px; }
+        .product-card { text-align: center; position: relative; margin-bottom: 2rem; }
+        .badge-label { position: absolute; top: 10px; left: 10px; background-color: #000; color: #fff; font-size: 0.7rem; padding: 2px 8px; text-transform: uppercase; z-index: 1; }
+        .hero-custom { background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("Images/call-bg.jpg"); background-size: cover; background-position: center; height: 450px; color: white; display: flex; align-items: center; }
+        .hero-custom h1 { font-family: 'Pacifico', cursive; font-size: 3rem; margin-bottom: 20px; }
+        .btn-pink { background-color: #e83e8c; color: white; border-radius: 30px; padding: 10px 30px; border: none; }
+        .btn-white { background-color: white; color: #e83e8c; border-radius: 30px; padding: 10px 30px; border: none; }
+        .footer { background-color: #f9f9f9; padding: 80px 0 30px; }
+        .footer h5 { margin-bottom: 25px; font-weight: 600; }
+        .footer a { color: #666; text-decoration: none; display: block; margin-bottom: 12px; }
+        .footer a:hover { color: #ff5f8f; text-decoration: underline; }
+        @media (min-width: 992px) { .col-lg-2-4 { flex: 0 0 20%; max-width: 20%; } }
+    </style>
 </head>
 <body>
     
-<!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="Images/logo.png" alt=""></a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Mynavbarexample">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="Mynavbarexample">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-        </ul>
-
-        <div class="icon-group d-flex align-items-center">
-          <img src="/Images/search.png" alt="Search">
-          <img src="/Images/heart.png" alt="Wishlist">
-          <img src="/Images/bag.png" alt="Cart">
-          <span class="price">$65.0</span>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!--Back Ground Image-->
-  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
-    <div class="carousel-inner">
-      
-      <div class="carousel-item active" style="background-image: url('Images/hero-2.jpg');">
-        <div class="hero-content">
-          <h5>FRESH FLOWER & GIFT SHOP</h5>
-          <h1>Making beautiful flowers a part of your life.</h1>
-          <button class="btn-shop">SHOP NOW</button>
-        </div>
-      </div>
-
-      <div class="carousel-item" style="background-image: url('/Images/hero-1.jpg');">
-        <div class="hero-content">
-          <h5>FRESH FLOWER & GIFT SHOP</h5>
-          <h1>Flowers that speak the language of love.</h1>
-          <button class="btn-shop">SHOP NOW</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--Next section-->
-<section class="feature-section container">
-    <div class="row text-center g-4 d-flex">
-      <div class="col-md-3 feature-item  ">
-        <img src="/Images/benefit-1.png" alt="">
-        <h5>100% Freshness</h5>
-        <p>Most people are unaware of the less common flower</p>
-      </div>
-
-      <div class="col-md-3 feature-item">
-        <img src="/Images/benefit-2.png" alt="">
-        <h5>Made by artist</h5>
-        <p>Most people are unaware of the less common flower</p>
-      </div>
-
-      <div class="col-md-3 feature-item">
-        <img src="/Images/benefit-3.png" alt="">
-        <h5>Own courier</h5>
-        <p>Most people are unaware of the less common flower</p>
-      </div>
-
-      <div class="col-md-3 feature-item">
-        <img src="/Images/benefit-4.png" alt="">
-        <h5>100% Freshness</h5>
-        <p>Most people are unaware of the less common flower</p>
-      </div>
-    </div>
-  </section>
-
-  <!--  Category Cards Section -->
-  <section class="category-section container">
-    <div class="row g-4">
-      <div class="col-md-3">
-        <div class="category-card">
-          <img src="/Images/categories-1.jpg" alt="Fresh Flower">
-          <div class="category-info">
-            <h5>Fresh Flower</h5>
-            <p>( 25 items )</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="category-card">
-          <img src="/Images/categories-2.jpg" alt="Succulent plants">
-          <div class="category-info">
-            <h5>Succulent plants</h5>
-            <p>( 162 items )</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="category-card">
-          <img src="/Images/categories-3.jpg" alt="Cactus plants">
-          <div class="category-info">
-            <h5>Cactus plants</h5>
-            <p>( 58 items )</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="category-card">
-          <img src="/Images/categories-4.jpg" alt="Furniture tree">
-          <div class="category-info">
-            <h5>Furniture tree</h5>
-            <p>( 25 items )</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <!-- About -->
-  <section class="py-5">
-      <div class="container">
-        <div class="row align-items-center gy-4">
-          <div class="col-lg-6">
-            <span class="text-uppercase text-danger fw-semibold">About Us</span>
-            <h2 class="about-title mt-3">We provide all kinds of fresh flower services</h2>
-          </div>
-          <div class="col-lg-6">
-            <p class="about-text">
-              For Heather Henson, of Boreal Blooms in Cold Lake, Alberta, Canada, growing flowers that can be dried and incorporated into late fall and winter floral arrangements has been a game-changer.
-            </p>
-          </div>
-        </div>
-      </div>
-  </section>
-
-    <!-- Flower Video Section -->
-  <section class="py-5">
-      <div class="container">
-        <div class="row align-items-center gy-4">
-          <div class="col-lg-6">
-            <div class="flower-image">
-              <img src="Images/about-video.jpg" alt="">
-              <div class="play-btn"></div>
+        <a class="navbar-brand" href="#"><img src="Images/logo.png" alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Mynavbarexample">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="Mynavbarexample">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+            <div class="icon-group d-flex align-items-center">
+                <img src="Images/search.png" alt="Search">
+                <img src="Images/heart.png" alt="Wishlist">
+                <img src="Images/bag.png" alt="Cart">
+                <span class="price">$65.0</span>
             </div>
-          </div>
-          <div class="col-lg-6 " style="border: 1px solid black; border-radius: 5px;  padding: 25px;">
-            <span class="text-uppercase text-danger fw-semibold">Slow Flowers’ Floral Insights</span>
-            <h2 class="fw-bold mt-2">Dried flowers are having a renaissance</h2>
-            <p>This awareness has been stimulated by sustainable sourcing practices and the desire to “extend the season.”</p>
-            <button class="btn btn-pink">Contact Us</button>
-          </div>
         </div>
-      </div>
-  </section>
-
-<!--Our Flower-->
-<div class="container py-5">
-  <div class="section-title">
-    <p>Our Flower</p>
-    <h2>New Arrivals</h2>
-  </div>
-
-  <div class="filter-btns mb-4">
-    <button class="btn active">All</button>
-    <button class="btn">Bouquet</button>
-    <button class="btn">Flower box</button>
-    <button class="btn">Flower shelf</button>
-    <button class="btn">Basket of flower</button>
-    <button class="btn">Gift combos</button>
-  </div>
-
-  <div class="row">
-    <!-- Product 1 -->
-    <div class="col-6 col-md-4 col-lg-2-4">
-      <div class="product-card">
-        <span class="badge-label">New</span>
-        <img src="/Images/product-1.jpg" alt="" >
-        <div class="product-title">Fly Me To The Moon</div>
-        <div class="product-price">$27.50</div>
-      </div>
     </div>
+</nav>
 
-    <!-- Product 2 -->
-    <div class="col-6 col-md-4 col-lg-2-4">
-      <div class="product-card">
-        <img src="/Images/product-2.jpg" alt="">
-        <div class="product-title">Fly Me To The Moon</div>
-        <div class="product-price">$27.50</div>
-      </div>
+<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="background-image: url('Images/hero-2.jpg');">
+            <div class="hero-content">
+                <h5>FRESH FLOWER & GIFT SHOP</h5>
+                <h1>Making beautiful flowers a part of your life.</h1>
+                <button class="btn-shop">SHOP NOW</button>
+            </div>
+        </div>
+        <div class="carousel-item" style="background-image: url('Images/hero-1.jpg');">
+            <div class="hero-content">
+                <h5>FRESH FLOWER & GIFT SHOP</h5>
+                <h1>Flowers that speak the language of love.</h1>
+                <button class="btn-shop">SHOP NOW</button>
+            </div>
+        </div>
     </div>
-
-    <!-- Product 3 (Sale) -->
-    <div class="col-6 col-md-4 col-lg-2-4">
-      <div class="product-card">
-        <span class="badge-label">Sale</span>
-        <img src="/Images/product-3.jpg" alt="">
-        <div class="product-title">Fly Me To The Moon</div>
-        <div class="product-price">$27.50</div>
-      </div>
-    </div>
-
-    <!-- Product 4 -->
-    <div class="col-6 col-md-4 col-lg-2-4">
-      <div class="product-card">
-        <img src="/Images/product-4.jpg" alt="">
-        <div class="product-title">Fly Me To The Moon</div>
-        <div class="product-price">$27.50</div>
-      </div>
-    </div>
-
-    <!-- Product 5 -->
-    <div class="col-6 col-md-4 col-lg-2-4">
-      <div class="product-card">
-        <img src="Images/product-5.jpg" alt="">
-        <div class="product-title">Fly Me To The Moon</div>
-        <div class="product-price">$27.50</div>
-      </div>
-    </div>
-
-    <!-- Product 6 -->
-    <div class="col-6 col-md-4 col-lg-2-4">
-      <div class="product-card">
-        <img src="/Images/product-6.jpg" alt="">
-        <div class="product-title">Fly Me To The Moon</div>
-        <div class="product-price">$27.50</div>
-      </div>
-    </div>
-
-    <!-- Product 7 (Out of Stock) -->
-    <div class="col-6 col-md-4 col-lg-2-4">
-      <div class="product-card">
-        <span class="badge-label">Out of Stock</span>
-        <img src="/Images/product-8.jpg" alt="">
-        <div class="product-title">Fly Me To The Moon</div>
-        <div class="product-price">$27.50</div>
-      </div>
-    </div>
-
-    <!-- Product 8 (New) -->
-    <div class="col-6 col-md-4 col-lg-2-4">
-      <div class="product-card">
-        <span class="badge-label">New</span>
-        <img src="/Images/product-7.jpg" alt="">
-        <div class="product-title">Fly Me To The Moon</div>
-        <div class="product-price">$27.50</div>
-      </div>
-    </div>
-
-    <!-- Product 9 -->
-    <div class="col-6 col-md-4 col-lg-2-4">
-      <div class="product-card">
-        <img src="/Images/product-10.jpg" alt="">
-        <div class="product-title">Fly Me To The Moon</div>
-        <div class="product-price">$27.50</div>
-      </div>
-    </div>
-
-    <!-- Product 10 (New) -->
-    <div class="col-6 col-md-4 col-lg-2-4">
-      <div class="product-card">
-        <span class="badge-label">New</span>
-        <img src="/Images/product-9.jpg" alt="">
-        <div class="product-title">Fly Me To The Moon</div>
-        <div class="product-price">$27.50</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="view-all">
-    <a href="#">View All Products</a>
-  </div>
 </div>
 
-
-<!--Custom Flower-->
-<section class="hero d-flex align-items-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 hero-content">
-        <br><br><br>
-        <div>
-        <h6 style="padding-top: 10px; font-style: itali;" class="text-left">Custom Flower</h6>
-        <h2><strong><i>Let our flowers make<br>your party more perfect.</i></strong></h2>
+<section class="feature-section container">
+    <div class="row text-center g-4">
+        <div class="col-md-3">
+            <img src="Images/benefit-1.png" class="mx-auto" alt="Fresh">
+            <h5>100% Freshness</h5>
+            <p class="text-muted small">Most people are unaware of the less common flower</p>
         </div>
-        <br>
-        <div class="d-flex gap-3">
-          <a href="#" class="btn btn-pink">Order Now</a>
-          <a href="#" class="btn btn-white">Contact Us</a>
+        <div class="col-md-3">
+            <img src="Images/benefit-2.png" class="mx-auto" alt="Artist">
+            <h5>Made by artist</h5>
+            <p class="text-muted small">Most people are unaware of the less common flower</p>
         </div>
-      </div>
+        <div class="col-md-3">
+            <img src="Images/benefit-3.png" class="mx-auto" alt="Courier">
+            <h5>Own courier</h5>
+            <p class="text-muted small">Most people are unaware of the less common flower</p>
+        </div>
+        <div class="col-md-3">
+            <img src="Images/benefit-4.png" class="mx-auto" alt="Freshness">
+            <h5>Quality Service</h5>
+            <p class="text-muted small">Most people are unaware of the less common flower</p>
+        </div>
     </div>
-  </div>
 </section>
 
-<!--Card Section-->
-  <div class="container py-5">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-      <div>
-        <div class="section-subtitle">LATEST POSTS</div>
-        <h2 class="section-title">Florist tricks</h2>
-      </div>
-      <a href="#" class="btn btn-outline-pink">VIEW ALL POSTS</a>
-    </div>
-
+<section class="category-section container pb-5">
     <div class="row g-4">
-      <!-- Card 1 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <div class="card-img-top-container">
-            <span class="category-tag">Trend News</span>
-            <img src="/Images//blog-1.jpg" class="card-img-top" alt="Romantic Gift">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">8 Romantic Gifts to Celebrate Your Wedding Anniversary</h5>
-            <p class="card-text">Flowers have a language all their own. In Victorian times, receiving a...</p>
-            <small class="text-muted">May 22, 2020</small>
-          </div>
+        <div class="col-md-3">
+            <div class="category-card">
+                <img src="Images/categories-1.jpg" alt="Fresh Flower">
+                <div class="category-info">
+                    <h5>Fresh Flower</h5>
+                    <p class="text-muted">( 25 items )</p>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <div class="card-img-top-container">
-            <span class="category-tag">Tips & Idea</span>
-            <img src="/Images//blog-2.jpg" class="card-img-top" alt="Red Rose">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Red Rose - Flower of love of Greek Mythology</h5>
-            <p class="card-text">Flowers have a language all their own. In Victorian times, receiving a...</p>
-            <small class="text-muted">May 22, 2020</small>
-          </div>
+        <div class="col-md-3">
+            <div class="category-card">
+                <img src="Images/categories-2.jpg" alt="Succulent">
+                <div class="category-info">
+                    <h5>Succulent plants</h5>
+                    <p class="text-muted">( 162 items )</p>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <div class="card-img-top-container">
-            <span class="category-tag">DIY & Crafts</span>
-            <img src="/Images/blog-3.jpg" class="card-img-top" alt="Mandala Flowers">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Beautiful Mandalas Made From Flowers by Kathy Klein</h5>
-            <p class="card-text">Flowers have a language all their own. In Victorian times, receiving a...</p>
-            <small class="text-muted">May 22, 2020</small>
-          </div>
+        <div class="col-md-3">
+            <div class="category-card">
+                <img src="Images/categories-3.jpg" alt="Cactus">
+                <div class="category-info">
+                    <h5>Cactus plants</h5>
+                    <p class="text-muted">( 58 items )</p>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="col-md-3">
+            <div class="category-card">
+                <img src="Images/categories-4.jpg" alt="Furniture">
+                <div class="category-info">
+                    <h5>Furniture tree</h5>
+                    <p class="text-muted">( 25 items )</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-
-  <!-- Testimonial Section -->
-<section class="testimonial-section position-relative">
-  
-  <div class="container">
-    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-      <div class="carousel-inner">
-        <!-- Testimonial 1 -->
-        <div class="carousel-item active">
-          <div class="quote-icon"><img src="/Images/quote.png" alt=""></div>
-          <p class="testimonial-text text-center">
-            “I just wanted to say thank you for making such gorgeous arrangements for our birthday celebration.
-            I couldn’t get over how perfect they were for the party. You did a fantastic job, and I appreciate it very much”
-          </p>
-          <div class="testimonial-author">Alejandro Houston</div>
-          <div class="testimonial-role">Businessman</div>
-        </div>
-      </div>
-
-      <!-- Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      </button>
-    </div>
-  </div>
 </section>
 
-<!-- Image Grid Section -->
-<section class="image-grid">
-  <div class="container-fluid px-0">
-    <div class="row g-0">
-      <div class="col-6 col-md-3">
-        <img src="/Images/insta-1.jpg" alt="Flower 1" />
-      </div>
-      <div class="col-6 col-md-3">
-        <img src="/Images/insta-2.jpg" alt="Flower 2" />
-      </div>
-      <div class="col-6 col-md-3">
-        <img src="/Images/insta-3.jpg" alt="Flower 3" />
-      </div>
-      <div class="col-6 col-md-3">
-        <img src="/Images/insta-4.jpg" alt="Flower 4" />
-      </div>
-     
+<div class="container py-5">
+    <div class="section-title">
+        <p>Our Flower</p>
+        <h2>New Arrivals</h2>
     </div>
-  </div>
-</section>
-
-<!--Footer Section-->
-<section class="footer-top">
-  <div class="container">
-    <div class="row align-items-center">
-      
-      <!-- Logo -->
-      <div class="col-md-3 text-md-start text-center mb-3 mb-md-0">
-        <div class="logo"><img src="/Images//logo.png" alt=""><span class="flower"><i class="fas fa-spa"></i></span>
-        </div>
-      </div>
-
-      <!-- Description -->
-      <div class="col-md-6 text-center">
-        <p>The floristry business has a significant market in the corporate and social event world, as flowers</p>
-      </div>
-
-      <!-- Social Media Icons -->
-      <div class="col-md-3 text-md-end text-center">
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-
+    <div class="filter-btns mb-4 text-center">
+        <button class="btn active">All</button>
+        <button class="btn">Bouquet</button>
+        <button class="btn">Flower box</button>
+        <button class="btn">Gifts</button>
     </div>
-  </div>
-</section>
-
-<!-- Footer Content -->
-<footer class="footer">
-  <div class="container">
     <div class="row">
-      
-      <!-- Company -->
-      <div class="col-md-3">
-        <h5>Company</h5>
-        <a href="#">About us</a>
-        <a href="#">Services</a>
-        <a href="#">Contact us</a>
-      </div>
-
-      <!-- Account -->
-      <div class="col-md-3">
-        <h5>Account</h5>
-        <a href="#">My cart</a>
-        <a href="#">Wishlist</a>
-        <a href="#">Login/Register</a>
-      </div>
-
-      <!-- Newsletter -->
-      <div class="col-md-3">
-        <h5>Newsletter</h5>
-        <p>Subscribe to our newsletter to get more free tips. No Spam, Promise.</p>
-        <form class="d-flex">
-          <input type="email" placeholder="Email">
-          <button type="submit" class="subscribe-btn">SUBSCRIBE</button>
-        </form>
-      </div>
-
-      <!-- Get in touch -->
-      <div class="col-md-3">
-        <h5>Get in touch</h5>
-        <p>69 North Cleveland Street, Memphis, USA.</p>
-        <p>(123) 8111 9210 - (012) 1111 6868</p>
-        <p><a href="mailto:Florisr@supportthem.com">Florisr@supportthem.com</a></p>
-      </div>
+        <div class="col-6 col-md-4 col-lg-2-4">
+            <div class="product-card">
+                <span class="badge-label">New</span>
+                <img src="Images/product-1.jpg" alt="Product">
+                <div class="mt-2 fw-medium">Fly Me To The Moon</div>
+                <div class="text-danger fw-bold">$27.50</div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2-4">
+            <div class="product-card">
+                <img src="Images/product-2.jpg" alt="Product">
+                <div class="mt-2 fw-medium">Wild Rose</div>
+                <div class="text-danger fw-bold">$27.50</div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2-4">
+            <div class="product-card">
+                <span class="badge-label bg-danger">Sale</span>
+                <img src="Images/product-3.jpg" alt="Product">
+                <div class="mt-2 fw-medium">Velvet Bloom</div>
+                <div class="text-danger fw-bold">$27.50</div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2-4">
+            <div class="product-card">
+                <img src="Images/product-4.jpg" alt="Product">
+                <div class="mt-2 fw-medium">Midnight Orchid</div>
+                <div class="text-danger fw-bold">$27.50</div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2-4">
+            <div class="product-card">
+                <img src="Images/product-5.jpg" alt="Product">
+                <div class="mt-2 fw-medium">Morning Dew</div>
+                <div class="text-danger fw-bold">$27.50</div>
+            </div>
+        </div>
     </div>
+</div>
 
-    <!-- Footer bottom -->
-    <div class="footer-bottom text-center">
-      <p>Copyright ©2025 All rights reserved |
-        This template is made with <span style="color: #e25555;">♥</span> by
-        <a href="https://colorlib.com" target="_blank"><i>Sakshiii</i></a>
-      </p>
+<section class="hero-custom">
+    <div class="container text-center text-md-start">
+        <h6 class="text-uppercase mb-3">Custom Flower</h6>
+        <h1>Let our flowers make<br>your party more perfect.</h1>
+        <div class="mt-4">
+            <a href="#" class="btn btn-pink me-3">Order Now</a>
+            <a href="#" class="btn btn-white">Contact Us</a>
+        </div>
     </div>
-  </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-3">
+                <img src="Images/logo.png" alt="Logo" class="mb-4" style="height: 35px;">
+                <p class="text-muted small">Exquisite floral designs for every occasion, delivered fresh to your doorstep.</p>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="#" class="text-dark"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-dark"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-dark"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h5>Company</h5>
+                <a href="#">About us</a>
+                <a href="#">Services</a>
+                <a href="#">Contact us</a>
+            </div>
+            <div class="col-md-3">
+                <h5>Newsletter</h5>
+                <p class="text-muted small">Subscribe for tips and floral inspiration.</p>
+                <form class="d-flex border-bottom border-dark pb-1 mt-2">
+                    <input type="email" placeholder="Email" class="form-control bg-transparent border-0 p-0 shadow-none">
+                    <button type="submit" class="btn p-0 fw-bold">SUBSCRIBE</button>
+                </form>
+            </div>
+            <div class="col-md-3">
+                <h5>Get in touch</h5>
+                <p class="text-muted small mb-1">69 North Cleveland Street, Memphis, USA.</p>
+                <p class="text-muted small">(123) 8111 9210</p>
+                <p class="text-muted small">Florisr@supportthem.com</p>
+            </div>
+        </div>
+        <div class="text-center mt-5 pt-4 border-top">
+            <p class="text-muted small">Copyright ©2026 All rights reserved | Made with ♥ by Sakshiii</p>
+        </div>
+    </div>
 </footer>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
