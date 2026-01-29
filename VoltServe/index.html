@@ -3,157 +3,352 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VoltServe</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>VoltServe | Electricity Services</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      line-height: 1.6;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: orange;
+      min-height: 70px;
+      padding: 0 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header h2 {
+      font-size: 1.8rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    .a {
+      padding: 10px 15px;
+      color: #333;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .a:hover {
+      color: white;
+    }
+
+    .Cl1 {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                  url("https://media.istockphoto.com/id/503622794/photo/light-bulbs-on-a-warm-gradient-background.jpg?s=612x612&w=0&k=20&c=cmKXP5GwrBtepYdwHkM7SOZPirLWQDBj1slNi2LE2jY=");
+      height: 80vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .Cl1 h1 {
+      font-size: clamp(2.2rem, 7vw, 4.5rem);
+      margin-bottom: 15px;
+    }
+
+    .btn-orange {
+      background-color: orange;
+      color: white;
+      padding: 12px 30px;
+      border: 2px solid orange;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+      text-transform: uppercase;
+      margin-top: 20px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-orange:hover {
+      background-color: transparent;
+      color: orange;
+    }
+
+    .Services {
+      padding: 80px 5%;
+      text-align: center;
+      background-color: #fcfcfc;
+    }
+
+    .underline {
+      border-bottom: 4px solid orange;
+    }
+
+    .Cl2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
+    }
+
+    .One {
+      background-color: orange;
+      padding: 40px 25px;
+      border-radius: 12px;
+      color: white;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .One:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .One h3 { margin: 15px 0; font-size: 1.5rem; }
+
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 80px 5%;
+      gap: 50px;
+    }
+
+    .cl3 { flex: 1; min-width: 320px; }
+    .about-img-container { flex: 1; min-width: 320px; text-align: center; }
+    .about-img-container img { max-width: 100%; height: auto; border-radius: 15px; }
+
+    .client {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 40px;
+      background: #fff;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      border-radius: 15px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .help {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 70px 5%;
+      text-align: center;
+    }
+
+    .help-btns {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 80px 5%;
+      gap: 40px;
+    }
+
+    .contact1 { flex: 1; min-width: 300px; }
+    .map { flex: 1; min-width: 300px; }
+    .map iframe { width: 100%; border-radius: 12px; border: 1px solid #eee; }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      color: #eee;
+      padding: 80px 5% 30px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 50px;
+      margin-bottom: 50px;
+    }
+
+    .Ul { list-style: none; }
+    .Ul a { color: #ccc; text-decoration: none; display: block; margin-bottom: 12px; transition: 0.3s; }
+    .Ul a:hover { color: orange; padding-left: 5px; }
+
+    @media (max-width: 992px) {
+      header { flex-direction: column; padding: 20px; text-align: center; }
+      nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+      .a { padding: 8px 12px; }
+      .about, .contact { flex-direction: column; }
+    }
+
+    @media (max-width: 600px) {
+      .client { flex-direction: column; }
+      .client div { padding: 10px 0; }
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <h2>VoltServe</h2>
     <nav>
       <ul>
-        <li class="li">
-          <a href="#A" class="a">Home</a>
-          <a href="#B" class="a">About Us</a>
-          <a href="#C"class="a">Services</a>
-          <a href="#D"class="a">Testimonial</a>
-          <a href="#E"class="a">Blog</a>
-          <a href="#F"class="a">Contact Us</a>
-        </li>
+        <li><a href="#A" class="a">Home</a></li>
+        <li><a href="#B" class="a">About Us</a></li>
+        <li><a href="#C" class="a">Services</a></li>
+        <li><a href="#D" class="a">Testimonial</a></li>
+        <li><a href="#E" class="a">Blog</a></li>
+        <li><a href="#F" class="a">Contact Us</a></li>
       </ul>
     </nav>
-
   </header>
+
   <main>
     <section class="Cl1" id="A">
-      <div class="heading">
-        <h1 style="font-size: 80px;"><b>Electricity Service</b></h1>
-        <p>Anything embarrassing hidden in the middle of text. All the Lorem Ipsuanything embarrassing</p>
-      </div>
-      <button id="button1">Read More</button>
+      <h1>Electricity Service</h1>
+      <p>Providing high-quality electrical solutions for a brighter future.</p>
+      <a href="#B" class="btn-orange">Read More</a>
     </section>
 
     <section class="Services" id="C">
-      <h2 style="font-size: 40px;">Our S<span style="text-decoration: underline ;text-decoration-color:orange;">er</span>vices</h2> <br><br>
-
-
-      
-        <div class="Cl2">
-          <div class="One">
-            <img src="/building-icon.png" alt=""><br><br>
-            <p class="p">Residential Services</p><br><br>
-            <p>alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything</p>
-            <button id="button2" style="margin-top: 110px;">Read More</button>
-          </div>
-          <div class="One">
-            <img src="/flash-icon.png" alt=""><br><br>
-            <p class="p">Commercial Services</p><br><br>
-            <p>alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything</p>
-            <button id="button2" style="margin-top: 109px;">Read More</button>
-          </div>
-          <div class="One" style="padding: 10px;">
-            <img src="/industrial-icon.png" alt=""><br><br>
-            <p class="p">Industrial Services</p><br><br>
-            <p>alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything</p>
-            <button id="button2" style="margin-top: 105px;">Read More</button>
-          </div>
-          <div class="One">
-            <img src="/bulb-icon.png" alt=""><br><br>
-            <p class="p">Electrical Services</p><br><br>
-            <p>alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything</p>
-            <button id="button2" style="margin-top: 109px;">Read More</button>
-          </div>
-      </div>
-    </section>
-    <section id="B">
-      <h2 class="company">About Our electricity Company</h2>
-      <div class="about">
-        <div class="cl3">
-          <h3>Slightly believable. If you are going</h3>
-          <p id="p1">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
-
-          <button id="button3">Read More</button>
+      <h2 style="font-size: 2.5rem;">Our <span class="underline">Ser</span>vices</h2>
+      <div class="Cl2">
+        <div class="One">
+          <h3>Residential</h3>
+          <p>Complete home wiring, lighting installation, and safety inspections to keep your family safe.</p>
+          <button class="btn-orange">Read More</button>
         </div>
-        <div>
-          <img src="about-img.png" height=500px; width=500px; style="margin-right: 200px;">
+        <div class="One">
+          <h3>Commercial</h3>
+          <p>Advanced electrical infrastructure design and maintenance for businesses and retail spaces.</p>
+          <button class="btn-orange">Read More</button>
+        </div>
+        <div class="One">
+          <h3>Industrial</h3>
+          <p>Heavy-duty power management and machinery electrical support for industrial plants.</p>
+          <button class="btn-orange">Read More</button>
+        </div>
+        <div class="One">
+          <h3>Electrical</h3>
+          <p>General electrical troubleshooting, panel upgrades, and emergency repair services 24/7.</p>
+          <button class="btn-orange">Read More</button>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="customers" id="D">
-        <h2>Customers Testimonial</h2><br>
-        <p style="font-size: 20px;">Even slightly believable. If you are going to use a passage</p>  
+    <section class="about" id="B">
+      <div class="cl3">
+        <h2 style="font-size: 2.2rem; margin-bottom: 20px;">About Our Electricity Company</h2>
+        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. We prioritize safety, efficiency, and customer satisfaction above all else.</p>
+        <button class="btn-orange">Read More</button>
+      </div>
+      <div class="about-img-container">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600" alt="About Us">
+      </div>
+    </section>
+
+    <section id="D" style="padding: 80px 5%; background: #f4f4f4;">
+      <div style="text-align: center;">
+        <h2 style="font-size: 2rem;">Customer Testimonials</h2>
+        <p>Even slightly believable. If you are going to use a passage.</p>
       </div>
       <div class="client">
-        <div>
-          <img src="client-img (1).png" alt="">
+        <div style="flex: 1;">
+          <img src="client-img (1).png" style="border-radius: 50%; border: 5px solid orange;" alt="Client">
         </div>
-        <div style="margin-left: 50px;">
-          <h3 style="margin-top: 30px;" >Markro</h3><br>
-          <p style="text-align: justify;">many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="F">
-      <div class="help">
-        <p style="font-size: xx-large;">Do you need any help for <span style="color: orange;">electricity ?</span></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-        <div style="display: flex;">
-          <button style="background-color: orange;color:#ffffff;" id="id12">GET A QUOTE</button>
-          <button id="id13">CALL NOW</button>
+        <div style="flex: 2; padding: 20px;">
+          <h3 style="color: orange;">Markro</h3>
+          <p>"The service was exceptional. The team arrived on time, diagnosed the issue quickly, and fixed it within an hour. Highly recommended!"</p>
         </div>
       </div>
     </section>
 
-    <section  class="contact">
+    <section class="help" id="F">
+      <h2 style="font-size: 2rem;">Do you need any help for <span style="color: orange;">electricity?</span></h2>
+      <p>Our experts are ready to assist you with any project, big or small.</p>
+      <div class="help-btns">
+        <button class="btn-orange">GET A QUOTE</button>
+        <button class="btn-orange" style="background: white; color: orange;">CALL NOW</button>
+      </div>
+    </section>
+
+    <section class="contact">
       <div class="contact1">
-        <h2>Get In Touch</h2> <br>
-        <input type="text" placeholder="Name" size="40" style="height: 40px; padding-left:7px"> <br><br>
-        <input type="text" name="" id="" placeholder="Phone Number" size="40" style="height: 40px; padding-left:7px"><br><br>
-        <input type="email" placeholder="Email Id"size="40" style="height: 40px; padding-left:7px"><br><br>
-        <input type="text" placeholder="Message"size="40" style="height: 80px; padding-left:7px"><br>
-
-        <button id="id14">Send</button>
+        <h2 style="margin-bottom: 30px;">Get In Touch</h2>
+        <div class="form-group">
+          <input type="text" placeholder="Name">
+          <input type="text" placeholder="Phone Number">
+          <input type="email" placeholder="Email Id">
+          <textarea placeholder="Message" rows="4"></textarea>
+          <button class="btn-orange" style="width: 100%;">Send Message</button>
+        </div>
       </div>
       <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62862.54813291749!2d73.77334327270757!3d18.520430347199625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c008ae95404d%3A0xef31a4c5ff073148!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1694678723456!5m2!1sen!2sin" 
-    width="700" 
-    height="550" frameborder="0"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.241264871843!2d-73.9878489!3d40.7579747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1625123456789!5m2!1sen!2sus" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </section>
-
-
   </main>
+
   <footer>
-    <section class="footer">
-      <div class="links">
-        <h2>Quick Links</h2><br>
-        <ul>
-          <li class="Ul">
-          <a id="i1" href="#A">Home</a><br>
-          <a id="i1" href="#B">About Us</a><br>
-          <a id="i1" href="#C">Services</a><br>
-          <a id="i1" href="#D">Testimonial</a><br>
-          <a id="i1" href="#E">Blog</a><br>
-          <a id="i1" href="#F">Contact Us</a>
-          </li>
+    <div class="footer-content">
+      <div>
+        <h3 style="color: orange; margin-bottom: 20px;">Quick Links</h3>
+        <ul class="Ul">
+          <li><a href="#A">Home</a></li>
+          <li><a href="#B">About Us</a></li>
+          <li><a href="#C">Services</a></li>
+          <li><a href="#D">Testimonial</a></li>
+          <li><a href="#E">Blog</a></li>
+          <li><a href="#F">Contact Us</a></li>
         </ul>
       </div>
-
-      <div class="blog" id="E">
-        <h2>Blog</h2><br>
-        <p><b>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-          </b></p>
+      <div id="E">
+        <h3 style="color: orange; margin-bottom: 20px;">Blog</h3>
+        <p>Stay updated with our latest electrical safety tips and industry news. New articles published weekly.</p>
       </div>
-      <div class="news">
-        <h2>Newsletter</h2><br>
-        <input id="id3" type="email" placeholder="Email Id"size="40" style="height: 40px; padding-left:7px"><br><br>
-
-        <button id="b4">Subscribe</button>
-
+      <div>
+        <h3 style="color: orange; margin-bottom: 20px;">Newsletter</h3>
+        <input type="email" placeholder="Email Id" style="width: 100%; padding: 12px; background: #333; border: 1px solid #444; color: white; border-radius: 5px; margin-bottom: 10px;">
+        <button class="btn-orange" style="width: 100%;">Subscribe</button>
       </div>
-    </section>
+    </div>
+    <div style="text-align: center; padding-top: 30px; border-top: 1px solid #333; font-size: 0.9rem;">
+      <p>&copy; 2025 VoltServe. All Rights Reserved.</p>
+    </div>
   </footer>
+
 </body>
 </html>
