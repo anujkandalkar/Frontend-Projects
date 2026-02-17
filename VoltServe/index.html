@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VoltServe | Electricity Services</title>
   <style>
+    /* Global Reset */
     * {
       margin: 0;
       padding: 0;
@@ -12,7 +13,9 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    html {
+    html, body {
+      width: 100%;
+      overflow-x: hidden; /* Critical: Stops horizontal scrolling/white space */
       scroll-behavior: smooth;
     }
 
@@ -21,26 +24,31 @@
       color: #333;
     }
 
+    /* Fixed Header Styles */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       background-color: orange;
       min-height: 70px;
-      padding: 0 5%;
+      padding: 10px 5%;
       position: sticky;
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 100%;
     }
 
     header h2 {
       font-size: 1.8rem;
+      white-space: nowrap;
     }
 
     nav ul {
       display: flex;
       list-style: none;
+      flex-wrap: wrap; /* Allows links to drop to next line on mobile */
+      justify-content: flex-end;
     }
 
     .a {
@@ -49,12 +57,14 @@
       font-weight: 600;
       text-decoration: none;
       transition: 0.3s;
+      display: inline-block;
     }
 
     .a:hover {
       color: white;
     }
 
+    /* Hero Section */
     .Cl1 {
       background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                   url("https://media.istockphoto.com/id/503622794/photo/light-bulbs-on-a-warm-gradient-background.jpg?s=612x612&w=0&k=20&c=cmKXP5GwrBtepYdwHkM7SOZPirLWQDBj1slNi2LE2jY=");
@@ -68,6 +78,7 @@
       text-align: center;
       color: white;
       padding: 20px;
+      width: 100%;
     }
 
     .Cl1 h1 {
@@ -95,8 +106,9 @@
       color: orange;
     }
 
+    /* Services Section */
     .Services {
-      padding: 80px 5%;
+      padding: 60px 5%;
       text-align: center;
       background-color: #fcfcfc;
     }
@@ -128,26 +140,33 @@
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
-    .One h3 { margin: 15px 0; font-size: 1.5rem; }
-
-    .about {
+    /* About & Contact Layouts */
+    .about, .contact {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      padding: 80px 5%;
-      gap: 50px;
+      padding: 60px 5%;
+      gap: 40px;
     }
 
-    .cl3 { flex: 1; min-width: 320px; }
-    .about-img-container { flex: 1; min-width: 320px; text-align: center; }
-    .about-img-container img { max-width: 100%; height: auto; border-radius: 15px; }
+    .cl3, .contact1, .map, .about-img-container {
+      flex: 1;
+      min-width: 300px;
+    }
 
+    .about-img-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+
+    /* Testimonial */
     .client {
       display: flex;
       flex-wrap: wrap;
       max-width: 850px;
       margin: 40px auto;
-      padding: 40px;
+      padding: 30px;
       background: #fff;
       box-shadow: 0 5px 20px rgba(0,0,0,0.08);
       border-radius: 15px;
@@ -158,7 +177,7 @@
     .help {
       background-color: #1a1a1a;
       color: white;
-      padding: 70px 5%;
+      padding: 60px 5%;
       text-align: center;
     }
 
@@ -170,17 +189,7 @@
       flex-wrap: wrap;
     }
 
-    .contact {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 80px 5%;
-      gap: 40px;
-    }
-
-    .contact1 { flex: 1; min-width: 300px; }
-    .map { flex: 1; min-width: 300px; }
-    .map iframe { width: 100%; border-radius: 12px; border: 1px solid #eee; }
-
+    /* Form and Map */
     .form-group input, .form-group textarea {
       width: 100%;
       padding: 15px;
@@ -190,33 +199,58 @@
       font-size: 1rem;
     }
 
+    .map iframe {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid #eee;
+    }
+
+    /* Footer */
     footer {
       background-color: #1a1a1a;
       color: #eee;
-      padding: 80px 5% 30px;
+      padding: 60px 5% 30px;
     }
 
     .footer-content {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 50px;
-      margin-bottom: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
     }
 
     .Ul { list-style: none; }
     .Ul a { color: #ccc; text-decoration: none; display: block; margin-bottom: 12px; transition: 0.3s; }
     .Ul a:hover { color: orange; padding-left: 5px; }
 
-    @media (max-width: 992px) {
-      header { flex-direction: column; padding: 20px; text-align: center; }
-      nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
-      .a { padding: 8px 12px; }
-      .about, .contact { flex-direction: column; }
+    /* --- MOBILE BREAKPOINTS --- */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+      }
+
+      nav ul {
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .a {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+      }
+
+      .Cl1 { height: 60vh; }
     }
 
-    @media (max-width: 600px) {
-      .client { flex-direction: column; }
-      .client div { padding: 10px 0; }
+    @media (max-width: 480px) {
+      .client {
+        flex-direction: column;
+      }
+      .One {
+        padding: 20px 15px;
+      }
     }
   </style>
 </head>
@@ -244,26 +278,26 @@
     </section>
 
     <section class="Services" id="C">
-      <h2 style="font-size: 2.5rem;">Our <span class="underline">Ser</span>vices</h2>
+      <h2 style="font-size: 2.2rem;">Our <span class="underline">Ser</span>vices</h2>
       <div class="Cl2">
         <div class="One">
           <h3>Residential</h3>
-          <p>Complete home wiring, lighting installation, and safety inspections to keep your family safe.</p>
+          <p>Complete home wiring, lighting installation, and safety inspections.</p>
           <button class="btn-orange">Read More</button>
         </div>
         <div class="One">
           <h3>Commercial</h3>
-          <p>Advanced electrical infrastructure design and maintenance for businesses and retail spaces.</p>
+          <p>Advanced infrastructure design and maintenance for businesses.</p>
           <button class="btn-orange">Read More</button>
         </div>
         <div class="One">
           <h3>Industrial</h3>
-          <p>Heavy-duty power management and machinery electrical support for industrial plants.</p>
+          <p>Heavy-duty power management and machinery electrical support.</p>
           <button class="btn-orange">Read More</button>
         </div>
         <div class="One">
           <h3>Electrical</h3>
-          <p>General electrical troubleshooting, panel upgrades, and emergency repair services 24/7.</p>
+          <p>General troubleshooting, panel upgrades, and 24/7 repairs.</p>
           <button class="btn-orange">Read More</button>
         </div>
       </div>
@@ -271,8 +305,8 @@
 
     <section class="about" id="B">
       <div class="cl3">
-        <h2 style="font-size: 2.2rem; margin-bottom: 20px;">About Our Electricity Company</h2>
-        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. We prioritize safety, efficiency, and customer satisfaction above all else.</p>
+        <h2 style="font-size: 2rem; margin-bottom: 20px;">About Our Electricity Company</h2>
+        <p>We prioritize safety, efficiency, and customer satisfaction. Our team of certified professionals ensures your power stays on and your systems run smoothly.</p>
         <button class="btn-orange">Read More</button>
       </div>
       <div class="about-img-container">
@@ -280,24 +314,24 @@
       </div>
     </section>
 
-    <section id="D" style="padding: 80px 5%; background: #f4f4f4;">
+    <section id="D" style="padding: 60px 5%; background: #f4f4f4;">
       <div style="text-align: center;">
         <h2 style="font-size: 2rem;">Customer Testimonials</h2>
-        <p>Even slightly believable. If you are going to use a passage.</p>
+        <p>Trusted by thousands of homeowners and businesses.</p>
       </div>
       <div class="client">
         <div style="flex: 1;">
-          <img src="client-img (1).png" style="border-radius: 50%; border: 5px solid orange;" alt="Client">
+          <div style="width: 80px; height: 80px; background: #ddd; border-radius: 50%; border: 4px solid orange; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-weight: bold;">User</div>
         </div>
-        <div style="flex: 2; padding: 20px;">
+        <div style="flex: 2; padding: 15px;">
           <h3 style="color: orange;">Markro</h3>
-          <p>"The service was exceptional. The team arrived on time, diagnosed the issue quickly, and fixed it within an hour. Highly recommended!"</p>
+          <p>"The service was exceptional. The team arrived on time, diagnosed the issue quickly, and fixed it within an hour!"</p>
         </div>
       </div>
     </section>
 
     <section class="help" id="F">
-      <h2 style="font-size: 2rem;">Do you need any help for <span style="color: orange;">electricity?</span></h2>
+      <h2>Do you need any help for <span style="color: orange;">electricity?</span></h2>
       <p>Our experts are ready to assist you with any project, big or small.</p>
       <div class="help-btns">
         <button class="btn-orange">GET A QUOTE</button>
@@ -317,7 +351,7 @@
         </div>
       </div>
       <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.241264871843!2d-73.9878489!3d40.7579747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1625123456789!5m2!1sen!2sus" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.142293761308!2d-73.98731968459391!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1625575512345!5m2!1sen!2sus" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </section>
   </main>
@@ -331,13 +365,12 @@
           <li><a href="#B">About Us</a></li>
           <li><a href="#C">Services</a></li>
           <li><a href="#D">Testimonial</a></li>
-          <li><a href="#E">Blog</a></li>
           <li><a href="#F">Contact Us</a></li>
         </ul>
       </div>
       <div id="E">
         <h3 style="color: orange; margin-bottom: 20px;">Blog</h3>
-        <p>Stay updated with our latest electrical safety tips and industry news. New articles published weekly.</p>
+        <p>Stay updated with our latest electrical safety tips and industry news.</p>
       </div>
       <div>
         <h3 style="color: orange; margin-bottom: 20px;">Newsletter</h3>
@@ -346,7 +379,7 @@
       </div>
     </div>
     <div style="text-align: center; padding-top: 30px; border-top: 1px solid #333; font-size: 0.9rem;">
-      <p>&copy; 2025 VoltServe. All Rights Reserved.</p>
+      <p>© 2026 VoltServe. All Rights Reserved.</p>
     </div>
   </footer>
 
