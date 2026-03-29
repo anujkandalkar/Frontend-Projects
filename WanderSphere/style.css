@@ -1,13 +1,13 @@
    body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
+      background-color: #b9d7f0;
     }
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #fff;
+      background:#f2c98b;
       padding: 15px 50px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: sticky;
