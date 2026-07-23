@@ -87,39 +87,6 @@ All you need is a web browser (e.g., Google Chrome, Mozilla Firefox, Microsoft E
      - Right-click `index.html` inside any project folder (e.g., `Academics/index.html`) -> **Open with Live Server**.
 
 ---
-
-## 📤 GitHub Commands (How to Upload & Push)
-
-Here are the step-by-step terminal commands to upload, commit, and push your changes to GitHub.
-
-### Step 1: Check Repository Status
-```bash
-git status
-```
-
-### Step 2: Add All Changes to Staging
-```bash
-git add .
-```
-
-### Step 3: Commit Your Changes
-```bash
-git commit -m "docs: add professional README.md with project showcase and instructions"
-```
-
-### Step 4: Verify Remote URL (If not set up)
-```bash
-git remote -v
-```
-*(If remote is not set, add it using: `git remote add origin https://github.com/anujkandalkar/Frontend-Projects.git`)*
-
-### Step 5: Push to GitHub
-```bash
-git push -u origin main
-```
-
----
-
 ## 🌐 Deploying to GitHub Pages (Optional)
 
 You can easily host these projects live using **GitHub Pages**:
