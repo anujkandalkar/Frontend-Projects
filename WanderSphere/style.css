@@ -1,140 +1,330 @@
-   body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #b9d7f0;
-    }
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background:#f2c98b;
-      padding: 15px 50px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .navbar h2 {
-      margin: 0;
-      color: #ff5e5e;
-    }
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-    .navbar ul li {
-      margin: 0 15px;
-    }
-    .navbar ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
-      height: 500px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      color: white;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 50px;
-      margin: 0;
-    }
-    .hero button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #20c997;
-      border: none;
-      color: white;
-      font-size: 18px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    .section {
-      text-align: center;
-      padding: 50px 20px;
-    }
-    .section h2 {
-      margin-bottom: 10px;
-    }
-    .section p {
-      color: #666;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .destinations {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-    .card {
-      width: 250px;
-      margin: 15px;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .card img {
-      width: 100%;
-      height: 170px;
-      object-fit: cover;
-    }
-    .card h3 {
-      margin: 10px;
-    }
-    .newsletter {
-      background: #2c3e50;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .newsletter input {
-      padding: 10px;
-      width: 250px;
-      border: none;
-      border-radius: 5px;
-      margin-right: 10px;
-    }
-    .newsletter button {
-      padding: 10px 20px;
-      background: #e74c3c;
-      border: none;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .places {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-    .place {
-      width: 300px;
-      margin: 15px;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .place img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .place h3, .place p {
-      margin: 10px;
-    }
-    .footer {
-      background: #222;
-      color: #aaa;
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
-    }
+/* WanderSphere - Modern Responsive Styles */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-color: #0d9488;
+  --primary-hover: #0f766e;
+  --accent-color: #f97316;
+  --bg-gradient: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --card-bg: #ffffff;
+  --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-dark);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 18px 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: -0.5px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.navbar ul li a:hover {
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.55)), 
+              url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #ffffff;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  max-width: 600px;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.hero button {
+  padding: 14px 32px;
+  background: var(--accent-color);
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.4);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero button:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.6);
+}
+
+/* Sections */
+.section {
+  text-align: center;
+  padding: 70px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.section p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+
+/* Popular Destination Cards */
+.destinations {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.card {
+  width: 220px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 16px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Newsletter Section */
+.newsletter {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 24px;
+  max-width: 1000px;
+  margin: 40px auto;
+  box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.3);
+}
+
+.newsletter h2 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.newsletter p {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.newsletter input {
+  padding: 14px 20px;
+  width: 320px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-radius: 50px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.newsletter input::placeholder {
+  color: #94a3b8;
+}
+
+.newsletter input:focus {
+  border-color: var(--primary-color);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.newsletter button {
+  padding: 14px 28px;
+  background: var(--primary-color);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.newsletter button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Popular Places */
+.places {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.place {
+  width: 320px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.place:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.place img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.place h3 {
+  font-size: 1.3rem;
+  margin: 16px 16px 6px 16px;
+  color: var(--text-dark);
+}
+
+.place p {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 16px 16px 16px;
+}
+
+/* Footer */
+.footer {
+  background: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 50px;
+  font-size: 0.95rem;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 40px 15px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .place {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .newsletter input {
+    width: 100%;
+    max-width: 320px;
+  }
+}
