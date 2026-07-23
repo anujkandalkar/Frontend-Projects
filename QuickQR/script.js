@@ -23,11 +23,24 @@ generateBtn.addEventListener("click", () => {
   };
 });
 
-downloadBtn.addEventListener("click", () => {
-  const link = document.createElement("a");
-  link.href = qrImg.src;
-  link.download = "qr-code.png";
-  link.click();
+downloadBtn.addEventListener("click", async () => {
+  try {
+    downloadBtn.innerText = "Downloading...";
+    const response = await fetch(qrImg.src);
+    const blob = await response.blob();
+    const blobUrl = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = blobUrl;
+    link.download = "qr-code.png";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(blobUrl);
+  } catch (err) {
+    window.open(qrImg.src, '_blank');
+  } finally {
+    downloadBtn.innerText = "Download";
+  }
 });
 
 copyBtn.addEventListener("click", () => {
