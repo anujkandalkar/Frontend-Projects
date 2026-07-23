@@ -111,13 +111,3 @@ Feel free to check the [issues page](https://github.com/anujkandalkar/Frontend-P
 5. Open a Pull Request
 
 ---
-
-## 📜 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
-
-<div align="center">
-  ⭐ If you find these projects helpful, please consider giving this repository a star! ⭐
-</div>
